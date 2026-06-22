@@ -1,3 +1,10 @@
+)
+[![Express](https://shields.io)](https://expressjs.com)
+[![Prisma](https://shields.io)](https://prisma.io)
+[![Redis](https://shields.io)](https://redis.io)
+
+---
+
 ## 🚀 Key Features
 
 - **Strict Type Safety**: Fully written in TypeScript with customized interfaces, request/response DTOs, and runtime validation.
@@ -14,7 +21,7 @@
 
 - **Language:** TypeScript
 - **Framework:** Express.js
-- **Database & ORM:** PostgreSQL, Prisma ORM
+- **Database & ORM:** PostgreSQL / MySQL, Prisma ORM
 - **Caching & Session Storage:** Redis
 - **Security & Auth:** JSON Web Tokens (JWT), bcrypt
 - **Mailing:** Nodemailer
@@ -25,7 +32,7 @@
 
 The project follows a modular and scalable directory structure:
 
-```
+```text
 src/
 ├── @types/            # Custom TypeScript type definitions
 ├── controllers/       # HTTP Request handlers (Extracts data, passes to services)
@@ -110,12 +117,12 @@ src/
 | Method   | Endpoint                    | Description                                              | Protected |
 | :------- | :-------------------------- | :------------------------------------------------------- | :-------: |
 | **POST** | `/api/auth/register`        | Register new account & trigger verification email        |    ❌     |
-| **POST** | `/api/auth/verify-email`    | Verify account using token sent via email                |    ❌     |
+| **POST** | `/api/auth/verify-email`    | Verify account using OTP sent via email                  |    ❌     |
 | **POST** | `/api/auth/login`           | Authenticate user, return tokens & save session to Redis |    ❌     |
 | **POST** | `/api/auth/refresh-token`   | Generate new Access Token using valid Refresh Token      |    ❌     |
 | **POST** | `/api/auth/logout`          | Revoke Refresh Token from Redis & clear session          |    ❌     |
 | **POST** | `/api/auth/forgot-password` | Request password reset OTP                               |    ❌     |
-| **POST** | `/api/auth/reset-password`  | Reset password using token                               |    ❌     |
+| **POST** | `/api/auth/reset-password`  | Reset password using OTP                                 |    ❌     |
 
 ---
 
@@ -124,9 +131,3 @@ src/
 1. **Token Blacklisting**: Blacklisting compromised tokens in Redis for absolute security.
 2. **Environment Isolation**: Critical configuration strictly separation using `.env`.
 3. **Safe Error Responses**: Operational errors are formatted cleanly while technical stack traces are hidden in production mode.
-
-# High-Performance Backend Authentication System (TypeScript)
-
-A production-ready, highly secure, and scalable backend authentication system built with **Node.js**, **Express**, and **TypeScript**. This repository demonstrates industry-standard security practices, clean architecture, and type-safe backend development.
-
----
