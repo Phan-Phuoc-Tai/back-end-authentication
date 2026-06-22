@@ -1,10 +1,3 @@
-)
-[![Express](https://shields.io)](https://expressjs.com)
-[![Prisma](https://shields.io)](https://prisma.io)
-[![Redis](https://shields.io)](https://redis.io)
-
----
-
 ## 🚀 Key Features
 
 - **Strict Type Safety**: Fully written in TypeScript with customized interfaces, request/response DTOs, and runtime validation.
